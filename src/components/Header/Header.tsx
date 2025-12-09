@@ -14,7 +14,7 @@ const Header = () => {
               color="inherit"
               className="header-logo"
             >
-              Winter Walimah: The Gala
+              Winter Walimah
             </Typography>
           </div>
           <div className="header-middle">
