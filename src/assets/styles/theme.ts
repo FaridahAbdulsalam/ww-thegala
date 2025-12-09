@@ -27,11 +27,11 @@ const theme = createTheme({
 
   typography: {
     // Define typography settings here if needed
-    fontFamily: `"The Seasons", serif`,
+    fontFamily: '"The Seasons", serif',
 
     //fancy script font for headings
     h1: {
-      fontFamily: `"New Icon Script", cursive`,
+      fontFamily: '"Imperial Script", cursive',
       fontSize: "3.5rem",
       fontWeight: 400,
       color: cafeNoir,
@@ -39,7 +39,7 @@ const theme = createTheme({
 
     //Section headings
     h2: {
-      fontFamily: `"Josefin Sans", sans-serif`,
+      fontFamily: '"Josefin Sans", sans-serif',
       fontSize: "2.5rem",
       fontWeight: 700,
       color: kombuGreen,

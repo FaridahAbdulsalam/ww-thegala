@@ -3,10 +3,8 @@ import "./Header.scss";
 
 const Header = () => {
   return (
-    <div>
       <AppBar position="fixed" className="header-appbar">
         <Toolbar className="header-toolbar" >
-
         <div className="header-inner">
           <div className="header-left">
             <Typography
@@ -60,7 +58,6 @@ const Header = () => {
         </div>
         </Toolbar>
       </AppBar>
-    </div>
   );
 };
 

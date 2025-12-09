@@ -14,7 +14,7 @@ function App() {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <CssBaseline/>
+        <CssBaseline />
         <Header />
         <main className="main">
           <Hero />
