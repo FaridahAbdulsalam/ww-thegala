@@ -1,10 +1,10 @@
-import { Box, Container, Typography, Button, Grid, Card } from "@mui/material";
+import { Box, Container, Typography, Button, Card } from "@mui/material";
+
 
 import "./WhatToExpect.scss";
 
 const WhatToExpect = () => {
   return (
-    <div>
       <Box component="section" id="what-to-expect" className="wte-section">
         <Container maxWidth="lg" className="wte-container">
           <Box className="wte-conveyor">
@@ -20,6 +20,7 @@ const WhatToExpect = () => {
               </Typography>
             </Box>
           </Box>
+
           <Box className="wte-style-block">
             <Typography variant="h1" className="wte-style-title">
               Dress to Impress
@@ -52,6 +53,8 @@ const WhatToExpect = () => {
               </Card>
             </Box>
           </Box>
+
+
           <Box className="wte-main-heading-wrapper">
             <Typography variant="h2" className="wte-main-heading">
               WHAT TO EXPECT
@@ -61,19 +64,20 @@ const WhatToExpect = () => {
               what your evening will hold.
             </Typography>
           </Box>
-          <Grid container spacing={4} className="wte-grid">
+
+          <Box className="wte-grid">
             {/*Dinner*/}
-             <Grid item xs={12} md={6} className="wte-card">
+             <Box className="wte-card">
               <Typography variant="h1" className="wte-card-title">
                 Dinner
               </Typography>
               <Typography variant="body1" className="wte-card-text">
                 Enjoy a delicious three-course meal prepared by top chefs,
               </Typography>
-            </Grid>
+            </Box>
 
             {/*Awards*/}
-            <Grid item xs={12} md={6} className="wte-card">
+            <Box className="wte-card">
               <Typography variant="h1" className="wte-card-title">
                 Awards
               </Typography>
@@ -92,10 +96,10 @@ const WhatToExpect = () => {
               >
                 Submit Your Votes
               </Button>
-            </Grid>
+            </Box>
 
             {/*Keynote Speaker*/}
-            <Grid item xs={12} md={6} className="wte-card">
+            <Box className="wte-card">
               <Typography variant="h1" className="wte-card-title">
                 Keynote Speaker
               </Typography>
@@ -103,10 +107,10 @@ const WhatToExpect = () => {
                 An inspiring keynote exploring community, gratitude, and
                 purpose.
               </Typography>
-            </Grid>
+            </Box>
 
             {/*Auction*/}
-            <Grid item xs={12} md={6} className="wte-card">
+            <Box className="wte-card">
               <Typography variant="h1" className="wte-card-title">
                 Auction
               </Typography>
@@ -114,11 +118,10 @@ const WhatToExpect = () => {
                 An inspiring keynote exploring community, gratitude, and
                 purpose.
               </Typography>
-            </Grid>
-          </Grid>
+            </Box>
+          </Box>
         </Container>
       </Box>
-    </div>
   );
 };
 
