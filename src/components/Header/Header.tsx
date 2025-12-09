@@ -1,10 +1,12 @@
 import { AppBar, Button, Toolbar, Typography } from "@mui/material";
+import "./Header.scss";
 
 const Header = () => {
   return (
     <div>
       <AppBar position="fixed" className="header-appbar">
-        <Toolbar className="header-toolbar" />
+        <Toolbar className="header-toolbar" >
+
         <div className="header-inner">
           <div className="header-left">
             <Typography
@@ -32,7 +34,7 @@ const Header = () => {
               color="inherit"
               href="#information"
             >
-              Where, When & What
+              Where & When
             </Button>
             <Button
               className="header-nav-link"
@@ -56,6 +58,7 @@ const Header = () => {
             </Button>
           </div>
         </div>
+        </Toolbar>
       </AppBar>
     </div>
   );

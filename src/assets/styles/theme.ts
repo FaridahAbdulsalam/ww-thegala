@@ -1,7 +1,7 @@
 import { createTheme } from "@mui/material/styles";
 
 //brand colours
-const cafeNoir = "#4C3D19";
+const cafeNoir = "#836a31ff";
 const kombuGreen = "#354024";
 const mossGreen = "#889063";
 const tan = "#CFBB99";

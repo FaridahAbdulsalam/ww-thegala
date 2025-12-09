@@ -2,12 +2,12 @@ import { ThemeProvider, CssBaseline } from "@mui/material";
 import theme from "./assets/styles/theme.ts";
 import "./App.scss";
 import "./assets/styles/global.scss";
-import FAQSection from "./components/FAQSection";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-import Hero from "./components/Hero";
-import InformationSection from "./components/InformationSection";
-import WhatToExpect from "./components/WhatToExpect";
+import FAQSection from "./components/FAQs/FAQSection.tsx";
+import Footer from "./components/Footer/Footer.tsx";
+import Header from "./components/Header/Header.tsx";
+import Hero from "./components/Hero/Hero.tsx";
+import InformationSection from "./components/Information/InformationSection.tsx";
+import WhatToExpect from "./components/What To Expect/WhatToExpect.tsx";
 import Typography from "@mui/material/Typography";
 
 function App() {
