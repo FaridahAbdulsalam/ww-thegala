@@ -1,0 +1,45 @@
+//color variables
+$cafe-noir: #836a31ff;
+$kombu-green: #354024;
+$moss-green: #889063;
+$tan: #cfbb99;
+$bone: #e5d7c4;
+
+.wte-section {
+  background-color: $bone;
+  padding: 80px 0;
+
+  .wte-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 16px;
+
+    .wte-conveyor {
+      overflow: hidden;
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+
+      &-track {
+        display: flex;
+        width: fit-content;
+        animation: scroll 20s linear infinite;
+      }
+
+      &-text {
+        padding: 0 2rem;
+        white-space: nowrap;
+      }
+    }
+
+    @keyframes scroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+  }
+}
