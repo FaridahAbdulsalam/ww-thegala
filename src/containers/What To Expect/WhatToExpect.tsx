@@ -1,4 +1,4 @@
-import { Box, Container, Typography, Button, Card } from "@mui/material";
+import { Box, Container, Typography, Card } from "@mui/material";
 import frame1 from "../../assets/images/background-style.png";
 import frame2 from "../../assets/images/style-inspo/Sister-style-1.png";
 
