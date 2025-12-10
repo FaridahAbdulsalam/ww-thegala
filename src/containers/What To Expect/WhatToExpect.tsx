@@ -138,8 +138,8 @@ const WhatToExpect = () => {
               Keynote Speaker
             </Typography>
             <Typography variant="body1" className="wte-card-text">
-              We have the esteemed pleasure of welcoming Br. Taofiq Abdulsalam
-              as our keynote speaker. Br. Taofiq is an excellent example for the
+              We have the esteemed pleasure of welcoming Dr. Taofiq Abdulsalam
+              as our keynote speaker. Dr. Taofiq is an excellent example for the
               youth, whose powerful words, lived personal & profesional
               experience and inspiring life story have made him a popular choice
               among the youth. His captivating lectures are relatable, funny and
