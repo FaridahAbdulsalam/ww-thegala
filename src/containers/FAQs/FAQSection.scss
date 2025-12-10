@@ -1,0 +1,74 @@
+//color variables
+$cafe-noir: #836a31ff;
+$kombu-green: #354024;
+$moss-green: #889063;
+$tan: #cfbb99;
+$bone: #e5d7c4;
+
+.faq-section{
+    background: linear-gradient(180deg, $bone 0%, darken($bone, 3%) 100%);
+    padding: clamp(80px, 12vw, 120px) 0;
+    position: relative;
+    
+    // Subtle texture overlay
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23836a31' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        pointer-events: none;
+        opacity: 0.4;
+    }
+    
+    .faq-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 24px;
+        position: relative;
+        width: 100%;
+    
+        @media (max-width: 768px) {
+        padding: 0 20px;
+        }
+    
+        .faq-header {
+        text-align: center;
+        margin-bottom: 56px;
+        padding: 0 20px;
+    
+        @media (max-width: 768px) {
+            margin-bottom: 40px;
+        }
+    
+        .faq-title {
+            font-size: clamp(32px, 5vw, 48px);
+            font-weight: 300;
+            color: $kombu-green;
+            margin-bottom: 20px;    
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            position: relative;
+            display: inline-block;
+        }
+
+        .faq-subtitle {
+            font-size: clamp(16px, 2.5vw, 20px);
+            color: $moss-green;
+            font-weight: 400;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+    }
+
+    .faq-list {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+}
+}

@@ -1,0 +1,48 @@
+//color variables
+$cafe-noir: #836a31ff;
+$kombu-green: #354024;
+$moss-green: #889063;
+$tan: #cfbb99;
+$bone: #e5d7c4;
+
+.faq-item{
+    background-color: lighten($bone, 2%);
+    border-radius: 8px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    
+    .faq-question-summary {
+        background-color: $tan;
+        border-radius: 8px;
+        padding: 16px;
+        
+        .MuiAccordionSummary-content {
+            margin: 0;
+        }
+        
+        .MuiTypography-root {
+            font-size: clamp(18px, 2.5vw, 22px);
+            font-weight: 500;
+            color: $kombu-green;
+        }
+    }
+    
+    .faq-answer-details {
+        padding: 16px;
+        
+        .faq-answer-text {
+            font-size: clamp(16px, 2.5vw, 20px);
+            color: $moss-green;
+            font-weight: 400;
+        }
+
+        .faq-answer-link {
+            font-size: clamp(16px, 2.5vw, 20px);
+            color: blue;
+            font-weight: 400;
+            text-decoration: underline;
+            cursor: pointer;
+            margin-top: 8px;
+        }
+    }
+}
