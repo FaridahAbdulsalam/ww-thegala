@@ -205,7 +205,12 @@ $bone: #e5d7c4;
           transform: translateX(-50%);
           width: 80px;
           height: 2px;
-          background: $cafe-noir;
+          background: linear-gradient(
+            90deg,
+            transparent,
+            $cafe-noir,
+            transparent
+          );
         }
       }
 

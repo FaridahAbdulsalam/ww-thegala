@@ -1,0 +1,257 @@
+//color variables
+$cafe-noir: #836a31ff;
+$kombu-green: #354024;
+$moss-green: #889063;
+$tan: #cfbb99;
+$bone: #e5d7c4;
+
+.info-section {
+  background: linear-gradient(180deg, $bone 0%, darken($bone, 3%) 100%);
+  padding: clamp(80px, 12vw, 120px) 0;
+  position: relative;
+
+  // Subtle texture overlay
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23836a31' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    pointer-events: none;
+    opacity: 0.4;
+  }
+
+  .info-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    position: relative;
+    width: 100%;
+
+    @media (max-width: 768px) {
+      padding: 0 20px;
+    }
+
+    .info-header {
+      text-align: center;
+      margin-bottom: 56px;
+      padding: 0 20px;
+
+      @media (max-width: 768px) {
+        margin-bottom: 40px;
+      }
+
+      .info-title {
+        font-size: clamp(32px, 5vw, 48px);
+        font-weight: 300;
+        color: $kombu-green;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        letter-spacing: 0.25em;
+        position: relative;
+        display: inline-block;
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: -12px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 80px;
+          height: 2px;
+          background: linear-gradient(
+            90deg,
+            transparent,
+            $cafe-noir,
+            transparent
+          );
+        }
+      }
+
+      .info-subtitle {
+        font-size: clamp(15px, 2vw, 18px);
+        font-weight: 400;
+        color: $cafe-noir;
+        letter-spacing: 0.02em;
+        line-height: 1.8;
+        margin-top: 24px;
+      }
+    }
+
+    .info-layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+      max-width: 100%;
+
+      @media (min-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+      }
+
+      .info-details {
+        font-size: clamp(16px, 2vw, 18px);
+        line-height: 1.8;
+        color: $kombu-green;
+        background: linear-gradient(135deg, $bone 0%, darken($bone, 2%) 100%);
+        padding: 40px 32px;
+        border-radius: 2px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08),
+          0 2px 6px rgba(0, 0, 0, 0.06);
+        border-left: 4px solid $moss-green;
+        transition: transform 0.3s ease, box-shadow 0.3s ease,
+          border-left-color 0.3s ease;
+        height: fit-content;
+
+        @media (max-width: 768px) {
+          padding: 32px 24px;
+        }
+
+        &:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12),
+            0 4px 12px rgba(0, 0, 0, 0.08);
+          border-left-color: $cafe-noir;
+        }
+
+        .info-venue {
+          font-weight: 300;
+          font-size: clamp(32px, 4vw, 44px);
+          color: $moss-green;
+          margin-bottom: 16px;
+          letter-spacing: 0.15em;
+        }
+
+        .info-address-line {
+          margin-top: 8px;
+          letter-spacing: 0.02em;
+          color: $kombu-green;
+        }
+
+        .info-date-time {
+          font-weight: 600;
+          color: $cafe-noir;
+          margin-top: 24px;
+          padding-top: 24px;
+          border-top: 1px solid rgba($cafe-noir, 0.15);
+          font-size: clamp(16px, 2vw, 18px);
+          letter-spacing: 0.02em;
+        }
+
+        .info-getting-there {
+          font-weight: 600;
+          font-size: clamp(32px, 4vw, 44px);
+          color: $moss-green;
+          margin-top: 32px;
+          margin-bottom: 12px;
+          letter-spacing: 0.15em;
+        }
+
+        .info-transport,
+        .info-parking {
+          margin-top: 12px;
+          line-height: 1.8;
+          letter-spacing: 0.02em;
+          color: $kombu-green;
+        }
+
+        .info-parking {
+          margin-top: 16px;
+        }
+      }
+
+      .info-map-wrapper {
+        width: 100%;
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        a {
+          display: block;
+          text-decoration: none;
+          width: 100%;
+        }
+
+        .info-map-image {
+          width: 100%;
+          height: auto;
+          display: block;
+          border-radius: 8px;
+          box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15),
+            0 4px 12px rgba(0, 0, 0, 0.1);
+          transition: all 0.4s ease;
+          cursor: pointer;
+          object-fit: contain;
+          max-height: 500px;
+
+          @media (max-width: 768px) {
+            max-height: 400px;
+          }
+        }
+
+        a:hover .info-map-image {
+          transform: translateY(-6px);
+          box-shadow: 0 16px 56px rgba(0, 0, 0, 0.2),
+            0 6px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .info-map-button {
+          margin-top: 20px;
+          width: 100%;
+          padding: 16px 32px;
+          background: linear-gradient(
+            135deg,
+            $cafe-noir 0%,
+            darken($cafe-noir, 10%) 100%
+          );
+          color: $bone;
+          border: none;
+          border-radius: 999px;
+          cursor: pointer;
+          font-size: clamp(14px, 2vw, 16px);
+          font-weight: 600;
+          letter-spacing: 0.12em;
+          text-transform: uppercase;
+          font-family: "Josefin Sans", sans-serif;
+          box-shadow: 0 4px 16px rgba($cafe-noir, 0.3),
+            0 2px 8px rgba($cafe-noir, 0.2);
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          position: relative;
+          overflow: hidden;
+          text-decoration: none;
+          display: inline-block;
+
+          &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translate(-50%, -50%);
+            transition: width 0.5s ease, height 0.5s ease;
+          }
+
+          &:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba($cafe-noir, 0.4),
+              0 3px 12px rgba($cafe-noir, 0.3);
+
+            &::before {
+              width: 300px;
+              height: 300px;
+            }
+          }
+
+          &:active {
+            transform: translateY(0);
+          }
+        }
+      }
+    }
+  }
+}

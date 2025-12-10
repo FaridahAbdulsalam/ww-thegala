@@ -17,7 +17,7 @@ const InformationSection = () => {
 
         <Box className="info-layout">
           <Box className="info-details">
-            <Typography variant="h4" className="info-venue">
+            <Typography variant="h1" className="info-venue">
               The Venue
             </Typography>
             <Typography variant="body1" className="info-address-line">
@@ -32,7 +32,7 @@ const InformationSection = () => {
             <Typography variant="body1" className="info-date-time">
               Saturday 10th January 2026 | 1:30pm - 8:00pm
             </Typography>
-            <Typography variant="h4" className="info-getting-there">
+            <Typography variant="h1" className="info-getting-there">
               Getting There
             </Typography>
             <Typography variant="body1" className="info-transport">
