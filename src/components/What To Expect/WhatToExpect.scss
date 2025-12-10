@@ -6,30 +6,66 @@ $tan: #cfbb99;
 $bone: #e5d7c4;
 
 .wte-section {
-  background-color: $bone;
-  padding: 80px 0;
+  background: linear-gradient(180deg, $bone 0%, darken($bone, 3%) 100%);
+  padding: 120px 0;
+  position: relative;
+
+  // Optional: Add subtle texture overlay
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23836a31' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    pointer-events: none;
+    opacity: 0.4;
+  }
 
   .wte-container {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 16px;
+    padding: 0 24px;
+    position: relative;
+
+    @media (max-width: 768px) {
+      padding: 0 20px;
+    }
 
     .wte-conveyor {
       overflow: hidden;
       width: 100%;
-      max-width: 800px;
-      margin: 0 auto;
+      max-width: 900px;
+      margin: 0 auto 64px;
       position: relative;
+      padding: 32px 0;
+
+      @media (max-width: 768px) {
+        margin-bottom: 48px;
+        padding: 24px 0;
+      }
 
       &-track {
         display: flex;
         width: fit-content;
-        animation: scroll 20s linear infinite;
+        animation: scroll 25s linear infinite;
       }
 
       &-text {
-        padding: 0 2rem;
+        padding: 0 3rem;
         white-space: nowrap;
+        font-size: clamp(48px, 7vw, 72px);
+        font-weight: 300;
+        letter-spacing: 0.15em;
+        color: $cafe-noir;
+        text-transform: uppercase;
+        opacity: 0.85;
+        transition: opacity 0.3s ease;
+
+        @media (max-width: 768px) {
+          padding: 0 2rem;
+        }
       }
     }
 
@@ -42,52 +78,223 @@ $bone: #e5d7c4;
       }
     }
 
-    .wte-style-block{
-        background: lighten($tan, 10%);
-        padding: 40px 20px;
-        text-align: center;
-        max-width: 1100px;
-        margin: 0 auto;
-        margin-bottom: 48px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    .wte-style-block {
+      background: linear-gradient(135deg, lighten($tan, 12%) 0%, lighten($tan, 8%) 100%);
+      padding: 64px 40px;
+      text-align: center;
+      max-width: 1100px;
+      margin: 0 auto 80px;
+      box-shadow: 
+        0 10px 40px rgba(0, 0, 0, 0.12),
+        0 2px 8px rgba(0, 0, 0, 0.08);
+      border-radius: 2px;
+      border-top: 3px solid $cafe-noir;
 
-        .wte-style-title{
-            font-size: 60px;
-            letter-spacing: 0.8px;
-            margin-bottom: 5px;
+      @media (max-width: 768px) {
+        padding: 48px 24px;
+        margin-bottom: 56px;
+      }
+
+      .wte-style-title {
+        font-size: clamp(40px, 6vw, 64px);
+        letter-spacing: 0.12em;
+        margin-bottom: 16px;
+        font-weight: 300;
+        color: $kombu-green;
+      }
+
+      .wte-style-subtitle {
+        max-width: 680px;
+        margin: 0 auto 40px;
+        font-size: clamp(15px, 2vw, 17px);
+        color: darken($cafe-noir, 5%);
+        line-height: 1.8;
+        letter-spacing: 0.02em;
+      }
+
+      .wte-style-carousel {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        overflow-x: auto;
+        padding-bottom: 16px;
+        scroll-snap-type: x mandatory;
+
+        @media (max-width: 768px) {
+          gap: 16px;
+          justify-content: flex-start;
         }
 
-        .wte-style-subtitle{
-            max-width: 640px;
-            margin: 0 auto;
-            font-size: 15px;
-            margin-bottom: 24px;
-            color: $cafe-noir;
+        &::-webkit-scrollbar {
+          height: 8px;
         }
 
-        .wte-style-carousel{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 16px;
-            overflow-y: auto;
-            padding-bottom: 8px;
-
-            .wte-style-card{
-                min-width: 160px;
-                max-width: 220px;
-                overflow: hidden;
-                box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
-
-                img{
-                    width: 100%;
-                    height: auto;
-                    display: block;
-                    object-fit: cover;
-                }
-            }
+        &::-webkit-scrollbar-track {
+          background: rgba($cafe-noir, 0.1);
+          border-radius: 4px;
         }
+
+        &::-webkit-scrollbar-thumb {
+          background: $cafe-noir;
+          border-radius: 4px;
+
+          &:hover {
+            background: darken($cafe-noir, 10%);
+          }
+        }
+
+        .wte-style-card {
+          min-width: 180px;
+          max-width: 240px;
+          overflow: hidden;
+          box-shadow: 
+            0 8px 24px rgba(0, 0, 0, 0.18),
+            0 2px 6px rgba(0, 0, 0, 0.12);
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          scroll-snap-align: center;
+          border-radius: 1px;
+
+          @media (max-width: 768px) {
+            min-width: 160px;
+            max-width: 200px;
+          }
+
+          &:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 
+              0 16px 40px rgba(0, 0, 0, 0.24),
+              0 4px 12px rgba(0, 0, 0, 0.16);
+          }
+
+          img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+          }
+        }
+      }
     }
 
+    .wte-main-heading-wrapper {
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto 56px;
+      padding: 0 20px;
+
+      @media (max-width: 768px) {
+        margin-bottom: 40px;
+      }
+
+      .wte-main-heading {
+        text-transform: uppercase;
+        letter-spacing: 0.25em;
+        font-size: clamp(32px, 5vw, 48px);
+        margin-bottom: 20px;
+        font-weight: 300;
+        color: $kombu-green;
+        position: relative;
+        display: inline-block;
+
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: -12px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 80px;
+          height: 2px;
+          background: $cafe-noir;
+        }
+      }
+
+      .wte-main-subheading {
+        font-size: clamp(15px, 2vw, 18px);
+        color: $cafe-noir;
+        line-height: 1.8;
+        letter-spacing: 0.02em;
+        margin-top: 24px;
+      }
+    }
+
+    .wte-grid {
+      margin-top: 48px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+
+      @media (min-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+      }
+
+      .wte-card {
+        background: linear-gradient(135deg, $bone 0%, darken($bone, 2%) 100%);
+        padding: 40px 32px;
+        box-shadow: 
+          0 6px 20px rgba(0, 0, 0, 0.08),
+          0 2px 6px rgba(0, 0, 0, 0.06);
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        height: 100%;
+        border-radius: 2px;
+        border-left: 4px solid $moss-green;
+        transition: transform 0.3s ease, box-shadow 0.3s ease, border-left-color 0.3s ease;
+
+        @media (max-width: 768px) {
+          padding: 32px 24px;
+        }
+
+        &:hover {
+          transform: translateY(-4px);
+          box-shadow: 
+            0 12px 32px rgba(0, 0, 0, 0.12),
+            0 4px 12px rgba(0, 0, 0, 0.08);
+          border-left-color: $cafe-noir;
+        }
+
+        .wte-card-title {
+          font-size: clamp(32px, 4vw, 44px);
+          margin-bottom: 12px;
+          letter-spacing: 0.15em;
+          color: $moss-green;
+          font-weight: 300;
+        }
+
+        .wte-card-text {
+          font-size: clamp(16px, 2vw, 18px);
+          color: $kombu-green;
+          line-height: 1.8;
+          letter-spacing: 0.01em;
+        }
+
+        .wte-awards-link {
+          margin-top: auto;
+          padding-top: 16px;
+          text-decoration: none;
+          color: $cafe-noir;
+          font-weight: 600;
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+          font-size: 14px;
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          transition: gap 0.3s ease, color 0.3s ease;
+
+          &::after {
+            content: '→';
+            font-size: 18px;
+          }
+
+          &:hover {
+            color: darken($cafe-noir, 15%);
+            gap: 12px;
+          }
+        }
+      }
+    }
   }
 }

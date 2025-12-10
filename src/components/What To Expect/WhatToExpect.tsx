@@ -90,8 +90,7 @@ const WhatToExpect = () => {
               Dinner
             </Typography>
             <Typography variant="body1" className="wte-card-text">
-              Enjoy a delicious three-course meal prepared by top chefs,
-            </Typography>
+              Enjoy a delicious three-course meal inspired by West-African Cuisine. With an array of dishes to choose from your bound to leave with a happy heart and full belly!            </Typography>
           </Box>
 
           {/*Awards*/}
@@ -100,7 +99,7 @@ const WhatToExpect = () => {
               Awards
             </Typography>
             <Typography variant="body1" className="wte-card-text">
-              Celebrate your community with a selection of heartfelt awards.
+              Your community. Your voice. You spoke and we listened. This year, we’re handing the power to you to help us recognize outstanding individuals in our community. Cast your votes for the awards that matter most to you and help us celebrate those who make a difference and keep our community thriving.
             </Typography>
 
             <Button
@@ -122,7 +121,7 @@ const WhatToExpect = () => {
               Keynote Speaker
             </Typography>
             <Typography variant="body1" className="wte-card-text">
-              An inspiring keynote exploring community, gratitude, and purpose.
+              We have the esteemed pleasure of welcoming Br. Taofiq Abdulsalam as our keynote speaker. Br. Taofiq is an excellent example for the youth, whose powerful words, lived personal & profesional experience and inspiring life story have made him a popular choice among the youth. His captivating lectures are relatable, funny and contain important reminders we need as muslims.
             </Typography>
           </Box>
 
@@ -132,7 +131,7 @@ const WhatToExpect = () => {
               Auction
             </Typography>
             <Typography variant="body1" className="wte-card-text">
-              An inspiring keynote exploring community, gratitude, and purpose.
+              As we prepare for an unforgettable evening, we are excited to announce that our auction will be back! Featuring an array of exclusive items and experiences. From unique memorabilia to pratical services, there will be something for everyone to bid on. All proceeds from the auction will go towards this year's chosen charity. Get ready to bid generously and make a difference witin the ummah.
             </Typography>
           </Box>
         </Box>

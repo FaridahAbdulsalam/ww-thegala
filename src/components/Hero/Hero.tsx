@@ -34,7 +34,7 @@ const Hero = () => {
               size="large"
               className="hero-primary-button"
               target="_blank"
-              href="https://www.eventbrite.com/e/winter-walimah-the-gala-tickets-492812939357"
+              href="https://www.eventbrite.com/e/winter-walimah-the-gala-tickets-1976923644839?aff=oddtdtcreator"
             >
               Get Tickets
             </Button>
