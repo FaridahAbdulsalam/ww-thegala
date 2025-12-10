@@ -13,16 +13,21 @@ $bone: #e5d7c4;
   top: 0;
   left: 0;
   z-index: 1000;
-  background: linear-gradient(180deg, rgba($bone, 0.75) 0%, rgba($bone, 0.65) 100%);
-  backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba($cafe-noir, 0.08);
+  background: linear-gradient(180deg, rgba($bone, 0.95) 0%, rgba($bone, 0.90) 100%);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba($cafe-noir, 0.05);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
   &.scrolled {
-    padding: clamp(12px, 2vw, 16px) clamp(20px, 5vw, 48px);
+    padding: clamp(16px, 2vw, 16px) clamp(20px, 5vw, 48px);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    background: linear-gradient(180deg, rgba($bone, 0.85) 0%, rgba($bone, 0.80) 100%);
-    backdrop-filter: blur(20px);
+    background: linear-gradient(180deg, rgba($bone, 0.25) 0%, rgba($bone, 0.20) 100%);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba($cafe-noir, 0.12);
+
+    .header-logo {
+      color: $cafe-noir !important;
+    }
   }
 
   // Remove MUI default styles
@@ -103,9 +108,8 @@ $bone: #e5d7c4;
         font-weight: 500;
         position: relative;
         overflow: hidden;
-        background: transparent !important; // Remove MUI background
+        background: transparent !important;
 
-        // Remove MUI ripple and hover effects
         &:hover {
           background: transparent !important;
         }
@@ -134,7 +138,6 @@ $bone: #e5d7c4;
           transform: scale(0.98);
         }
 
-        // Active state
         &.active {
           color: $cafe-noir;
 
@@ -204,7 +207,6 @@ $bone: #e5d7c4;
         }
       }
 
-      // Mobile menu button
       .header-menu-button {
         display: flex;
         flex-direction: column;
@@ -222,7 +224,6 @@ $bone: #e5d7c4;
           display: none;
         }
 
-        // Remove any default button styling
         &:focus {
           outline: none;
         }
@@ -247,7 +248,6 @@ $bone: #e5d7c4;
           transform: scale(1.05);
         }
 
-        // Open state (X icon)
         &.open {
           span:nth-child(1) {
             transform: rotate(45deg) translateY(10px);
@@ -267,17 +267,16 @@ $bone: #e5d7c4;
   }
 }
 
-// Mobile side menu
 .header-mobile-menu {
   position: fixed;
   top: 0;
-  right: -100%; // Start off-screen
+  right: -100%;
   width: min(320px, 80vw);
   height: 100vh;
   background: rgba($bone, 0.98);
   backdrop-filter: blur(20px);
   border-left: 1px solid rgba($cafe-noir, 0.12);
-  padding: 100px 32px 32px; // Top padding accounts for header
+  padding: 100px 32px 32px;
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -291,7 +290,7 @@ $bone: #e5d7c4;
   }
 
   &.open {
-    right: 0; // Slide in from right
+    right: 0;
   }
 
   .header-mobile-link {
@@ -324,7 +323,6 @@ $bone: #e5d7c4;
   }
 }
 
-// Overlay when mobile menu is open
 .header-mobile-overlay {
   position: fixed;
   top: 0;

@@ -14,12 +14,47 @@ $bone: #e5d7c4;
   padding: 2rem 1.5rem;
   position: relative;
   overflow: hidden;
-  background: radial-gradient(
-    ellipse at top,
-    rgba($tan, 0.5) 0%,
-    $bone 40%,
-    rgba(darken($bone, 8%), 0.8) 100%
-  );
+
+  // Video background
+  .hero-video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+
+    video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+    }
+  }
+
+  // Overlay gradient (over video)
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(
+      ellipse at top,
+      rgba($tan, 0.5) 0%,
+      rgba($bone, 0.7) 40%,
+      rgba(darken($bone, 8%), 0.85) 100%
+    );
+    z-index: 1;
+    pointer-events: none;
+  }
 
   // Subtle animated gradient overlay for depth
   &::before {
@@ -34,6 +69,7 @@ $bone: #e5d7c4;
       radial-gradient(circle at 80% 30%, rgba($moss-green, 0.06) 0%, transparent 50%);
     animation: subtle-shift 20s ease-in-out infinite;
     pointer-events: none;
+    z-index: 1;
   }
 
   @keyframes subtle-shift {
@@ -52,7 +88,7 @@ $bone: #e5d7c4;
     max-width: 1400px;
     margin: 0 auto;
     position: relative;
-    z-index: 1;
+    z-index: 2;
   }
 
   .hero-content {
@@ -79,9 +115,10 @@ $bone: #e5d7c4;
       letter-spacing: 0.3em;
       font-size: clamp(0.85rem, 1.5vw, 1.1rem);
       color: $moss-green;
-      font-weight: 500;
+      font-weight: 700;
       opacity: 0.9;
       animation: fade-in-up 1.2s ease-out 0.2s backwards;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
     }
 
     .hero-title {
@@ -91,7 +128,7 @@ $bone: #e5d7c4;
       letter-spacing: 0.02em;
       color: $kombu-green;
       margin: 0.5rem 0;
-      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
       animation: fade-in-up 1.2s ease-out 0.3s backwards;
 
       @media (max-width: 600px) {
@@ -107,6 +144,7 @@ $bone: #e5d7c4;
       font-weight: 300;
       color: darken($cafe-noir, 8%);
       animation: fade-in-up 1.2s ease-out 0.4s backwards;
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
 
       @media (max-width: 600px) {
         letter-spacing: 0.25em;
@@ -126,6 +164,7 @@ $bone: #e5d7c4;
       color: $kombu-green;
       letter-spacing: 0.02em;
       animation: fade-in-up 1.2s ease-out 0.5s backwards;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     }
 
     .hero-description {
@@ -135,6 +174,7 @@ $bone: #e5d7c4;
       line-height: 1.7;
       letter-spacing: 0.01em;
       animation: fade-in-up 1.2s ease-out 0.6s backwards;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     }
 
     .hero-actions {
@@ -282,7 +322,6 @@ $bone: #e5d7c4;
       .hero-description {
         max-width: 50rem;
       }
-      
     }
   }
 }

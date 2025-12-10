@@ -4,6 +4,8 @@ import "./Header.scss";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
@@ -12,6 +14,32 @@ const Header = () => {
   const closeMobileMenu = () => {
     setMobileMenuOpen(false);
   };
+
+  // Handle scroll detection
+  useEffect(() => {
+    const handleScroll = () => {
+      // Add scrolled class after scrolling 50px
+      setScrolled(window.scrollY > 50);
+
+      // Detect active section
+      const sections = ["hero", "what-to-expect", "information", "faq"];
+      const scrollPosition = window.scrollY + 200; // Offset for better detection
+
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const { offsetTop, offsetHeight } = element;
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            setActiveSection(section);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   // Prevent body scroll when menu is open
   useEffect(() => {
@@ -27,7 +55,7 @@ const Header = () => {
 
   return (
     <>
-      <AppBar position="fixed" className="header-appbar">
+      <AppBar position="fixed" className={`header-appbar ${scrolled ? "scrolled" : ""}`}>
         <Toolbar className="header-toolbar">
           <div className="header-inner">
             <div className="header-left">
@@ -35,7 +63,7 @@ const Header = () => {
                 variant="h6"
                 component={"a"}
                 href="#hero"
-                color="inherit"
+                color="#E5D7C4"
                 className="header-logo"
                 onClick={closeMobileMenu}
                 sx={{ textDecoration: 'none' }}
@@ -45,7 +73,7 @@ const Header = () => {
             </div>
             <div className="header-middle">
               <Button
-                className="header-nav-link"
+                className={`header-nav-link ${activeSection === "what-to-expect" ? "active" : ""}`}
                 variant="text"
                 color="inherit"
                 href="#what-to-expect"
@@ -54,7 +82,7 @@ const Header = () => {
                 What To Expect
               </Button>
               <Button
-                className="header-nav-link"
+                className={`header-nav-link ${activeSection === "information" ? "active" : ""}`}
                 variant="text"
                 color="inherit"
                 href="#information"
@@ -63,7 +91,7 @@ const Header = () => {
                 Where & When
               </Button>
               <Button
-                className="header-nav-link"
+                className={`header-nav-link ${activeSection === "faq" ? "active" : ""}`}
                 variant="text"
                 color="inherit"
                 href="#faq"
@@ -109,21 +137,21 @@ const Header = () => {
       <div className={`header-mobile-menu ${mobileMenuOpen ? "open" : ""}`}>
         <a
           href="#what-to-expect"
-          className="header-mobile-link"
+          className={`header-mobile-link ${activeSection === "what-to-expect" ? "active" : ""}`}
           onClick={closeMobileMenu}
         >
           What To Expect
         </a>
         <a
           href="#information"
-          className="header-mobile-link"
+          className={`header-mobile-link ${activeSection === "information" ? "active" : ""}`}
           onClick={closeMobileMenu}
         >
           Where & When
         </a>
         <a
           href="#faq"
-          className="header-mobile-link"
+          className={`header-mobile-link ${activeSection === "faq" ? "active" : ""}`}
           onClick={closeMobileMenu}
         >
           FAQ

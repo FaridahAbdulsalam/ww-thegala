@@ -1,10 +1,25 @@
 import { Box, Container, Typography, Button } from "@mui/material";
+import heroVideo from "../../assets/videos/tablescape2.mp4"
 import "./Hero.scss";
+
 
 
 const Hero = () => {
   return (
     <Box component="section" className="hero-section" id="hero">
+      {/* Video Background */}
+      <Box className="hero-video-background">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+        >
+          <source src={heroVideo} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </Box>
+
       <Container maxWidth="md" className="hero-container">
         <Box className="hero-content">
           <Typography

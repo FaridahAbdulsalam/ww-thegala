@@ -1,6 +1,6 @@
 import { Box, Container, Typography, Button, Card } from "@mui/material";
-import frame1 from "../../assets/images/background-style.png"
-import frame2 from "../../assets/images/style-inspo/Sister-style-1.png"
+import frame1 from "../../assets/images/background-style.png";
+import frame2 from "../../assets/images/style-inspo/Sister-style-1.png";
 
 import "./WhatToExpect.scss";
 
@@ -8,7 +8,6 @@ const WhatToExpect = () => {
   return (
     <Box component="section" id="what-to-expect" className="wte-section">
       <Container maxWidth="lg" className="wte-container">
-
         <Box className="wte-conveyor">
           <Box className="wte-conveyor-track">
             <Typography variant="h2" className="wte-conveyor-text">
@@ -90,7 +89,10 @@ const WhatToExpect = () => {
               Dinner
             </Typography>
             <Typography variant="body1" className="wte-card-text">
-              Enjoy a delicious three-course meal inspired by West-African Cuisine. With an array of dishes to choose from your bound to leave with a happy heart and full belly!            </Typography>
+              Enjoy a delicious three-course meal inspired by West-African
+              Cuisine. With an array of dishes to choose from your bound to
+              leave with a happy heart and full belly!{" "}
+            </Typography>
           </Box>
 
           {/*Awards*/}
@@ -99,10 +101,25 @@ const WhatToExpect = () => {
               Awards
             </Typography>
             <Typography variant="body1" className="wte-card-text">
-              Your community. Your voice. You spoke and we listened. This year, we’re handing the power to you to help us recognize outstanding individuals in our community. Cast your votes for the awards that matter most to you and help us celebrate those who make a difference and keep our community thriving.
+              Your community. Your voice. You spoke and we listened. This year,
+              we’re handing the power to you to help us recognize outstanding
+              individuals in our community. Cast your votes for the awards that
+              matter most to you and help us celebrate those who make a
+              difference and keep our community thriving.
             </Typography>
 
-            <Button
+            <Typography
+              variant="body1"
+              component="a"
+              href="https://www.instagram.com/stories/highlights/18111097441721134/"
+              target="_blank"
+              rel="noreferrer"
+              className="faq-answer-link"
+            >
+              Send in your nominees →
+            </Typography>
+
+            {/* <Button
               variant="outlined"
               color="primary"
               className="wte-awards-link"
@@ -112,7 +129,7 @@ const WhatToExpect = () => {
               rel="noreferrer"
             >
               Submit Your Votes
-            </Button>
+            </Button> */}
           </Box>
 
           {/*Keynote Speaker*/}
@@ -121,7 +138,12 @@ const WhatToExpect = () => {
               Keynote Speaker
             </Typography>
             <Typography variant="body1" className="wte-card-text">
-              We have the esteemed pleasure of welcoming Br. Taofiq Abdulsalam as our keynote speaker. Br. Taofiq is an excellent example for the youth, whose powerful words, lived personal & profesional experience and inspiring life story have made him a popular choice among the youth. His captivating lectures are relatable, funny and contain important reminders we need as muslims.
+              We have the esteemed pleasure of welcoming Br. Taofiq Abdulsalam
+              as our keynote speaker. Br. Taofiq is an excellent example for the
+              youth, whose powerful words, lived personal & profesional
+              experience and inspiring life story have made him a popular choice
+              among the youth. His captivating lectures are relatable, funny and
+              contain important reminders we need as muslims.
             </Typography>
           </Box>
 
@@ -131,7 +153,13 @@ const WhatToExpect = () => {
               Auction
             </Typography>
             <Typography variant="body1" className="wte-card-text">
-              As we prepare for an unforgettable evening, we are excited to announce that our auction will be back! Featuring an array of exclusive items and experiences. From unique memorabilia to pratical services, there will be something for everyone to bid on. All proceeds from the auction will go towards this year's chosen charity. Get ready to bid generously and make a difference witin the ummah.
+              As we prepare for an unforgettable evening, we are excited to
+              announce that our auction will be back! Featuring an array of
+              exclusive items and experiences. From unique memorabilia to
+              pratical services, there will be something for everyone to bid on.
+              All proceeds from the auction will go towards this year's chosen
+              charity. Get ready to bid generously and make a difference witin
+              the ummah.
             </Typography>
           </Box>
         </Box>
