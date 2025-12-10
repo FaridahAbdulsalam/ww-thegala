@@ -32,7 +32,7 @@ const FAQCard = ({question, answer, link}: AccordianProps) => {
             rel="noreferrer"
             className="faq-answer-link"
           >
-            Learn more →
+            Follow the link →
           </Typography>
         )}
       </AccordionDetails>
