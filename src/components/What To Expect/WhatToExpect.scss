@@ -41,5 +41,53 @@ $bone: #e5d7c4;
         transform: translateX(-50%);
       }
     }
+
+    .wte-style-block{
+        background: lighten($tan, 10%);
+        padding: 40px 20px;
+        text-align: center;
+        max-width: 1100px;
+        margin: 0 auto;
+        margin-bottom: 48px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+
+        .wte-style-title{
+            font-size: 60px;
+            letter-spacing: 0.8px;
+            margin-bottom: 5px;
+        }
+
+        .wte-style-subtitle{
+            max-width: 640px;
+            margin: 0 auto;
+            font-size: 15px;
+            margin-bottom: 24px;
+            color: $cafe-noir;
+        }
+
+        .wte-style-carousel{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            overflow-y: auto;
+            padding-bottom: 8px;
+
+            .wte-style-card{
+                min-width: 160px;
+                max-width: 220px;
+                overflow: hidden;
+                box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+
+                img{
+                    width: 100%;
+                    height: auto;
+                    display: block;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+
   }
 }

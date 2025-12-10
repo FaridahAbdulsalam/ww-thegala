@@ -1,4 +1,6 @@
 import { Box, Container, Typography, Button, Card } from "@mui/material";
+import frame1 from "../../assets/images/background-style.png"
+import frame2 from "../../assets/images/style-inspo/Sister-style-1.png"
 
 import "./WhatToExpect.scss";
 
@@ -6,6 +8,7 @@ const WhatToExpect = () => {
   return (
     <Box component="section" id="what-to-expect" className="wte-section">
       <Container maxWidth="lg" className="wte-container">
+
         <Box className="wte-conveyor">
           <Box className="wte-conveyor-track">
             <Typography variant="h2" className="wte-conveyor-text">
@@ -48,21 +51,21 @@ const WhatToExpect = () => {
           <Box className="wte-style-carousel">
             <Card className="wte-style-card">
               <img
-                src="/images/what-to-expect/formal1.jpg"
+                src={frame1}
                 alt="Formal Attire 1"
                 className="wte-style-image"
               />
             </Card>
             <Card className="wte-style-card">
               <img
-                src="/images/what-to-expect/formal2.jpg"
+                src={frame2}
                 alt="Formal Attire 2"
                 className="wte-style-image"
               />
             </Card>
             <Card className="wte-style-card">
               <img
-                src="/images/what-to-expect/formal3.jpg"
+                src={frame1}
                 alt="Formal Attire 3"
                 className="wte-style-image"
               />
