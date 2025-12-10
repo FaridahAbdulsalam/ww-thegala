@@ -1,51 +1,345 @@
+//color variables
+$cafe-noir: #836a31ff;
+$kombu-green: #354024;
+$moss-green: #889063;
+$tan: #cfbb99;
+$bone: #e5d7c4;
+
 .header-appbar {
-    box-shadow: none;
-    padding: 20px 40px;
-    position: fixed;
+  box-shadow: none;
+  padding: clamp(16px, 3vw, 24px) clamp(20px, 5vw, 48px);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background: linear-gradient(180deg, rgba($bone, 0.75) 0%, rgba($bone, 0.65) 100%);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba($cafe-noir, 0.08);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &.scrolled {
+    padding: clamp(12px, 2vw, 16px) clamp(20px, 5vw, 48px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    background: linear-gradient(180deg, rgba($bone, 0.85) 0%, rgba($bone, 0.80) 100%);
+    backdrop-filter: blur(20px);
+  }
+
+  // Remove MUI default styles
+  .header-toolbar {
+    padding: 0 !important;
+    min-height: unset !important;
+  }
+
+  .header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1000;
+    max-width: 1400px;
+    margin: 0 auto;
+    gap: 2rem;
 
-
-    .header-inner{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-        max-width: 1200px;
-        margin: 0 auto;
-
-        .header-left{
-            display: flex;
-            align-items: center;
-
-            .header-logo{
-                font-family: "Imperial Script", cursive;
-                font-size: 1.8rem;
-            }
-        }
-
-        .header-middle{
-            display: flex;
-            gap: 5px;
-
-            .header-nav-link{
-                font-family: "Josefin Sans", sans-serif;
-                letter-spacing: 1px;
-                text-transform: uppercase;
-                font-size: 0.9rem;
-            }
-        }
-
-        .header-right{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            .header-tickets{
-                padding: 10px;
-            }
-        }
+    @media (max-width: 768px) {
+      gap: 1rem;
     }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+
+      .header-logo {
+        font-family: "Imperial Script", cursive;
+        font-size: clamp(1.5rem, 3vw, 2.2rem);
+        color: $bone;
+        letter-spacing: 0.02em;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+        position: relative;
+
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: -4px;
+          left: 0;
+          width: 0;
+          height: 2px;
+          background: linear-gradient(90deg, $cafe-noir, transparent);
+          transition: width 0.3s ease;
+        }
+
+        &:hover {
+          color: darken($cafe-noir, 10%);
+          transform: translateY(-1px);
+
+          &::after {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    .header-middle {
+      display: none;
+      gap: 8px;
+
+      @media (min-width: 900px) {
+        display: flex;
+        gap: 12px;
+      }
+
+      .header-nav-link {
+        font-family: "Josefin Sans", sans-serif;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        font-size: clamp(0.8rem, 1vw, 0.95rem);
+        color: $kombu-green;
+        text-decoration: none;
+        padding: 10px 16px;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+        font-weight: 500;
+        position: relative;
+        overflow: hidden;
+        background: transparent !important; // Remove MUI background
+
+        // Remove MUI ripple and hover effects
+        &:hover {
+          background: transparent !important;
+        }
+
+        &::before {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 0;
+          height: 2px;
+          background: $cafe-noir;
+          transition: width 0.3s ease;
+        }
+
+        &:hover {
+          color: $cafe-noir;
+
+          &::before {
+            width: 80%;
+          }
+        }
+
+        &:active {
+          transform: scale(0.98);
+        }
+
+        // Active state
+        &.active {
+          color: $cafe-noir;
+
+          &::before {
+            width: 80%;
+          }
+        }
+      }
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+
+      .header-tickets {
+        padding: 12px 24px;
+        background: linear-gradient(135deg, $cafe-noir 0%, darken($cafe-noir, 10%) 100%);
+        color: $bone;
+        border: none;
+        border-radius: 999px;
+        font-family: "Josefin Sans", sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-size: clamp(0.8rem, 1.2vw, 0.95rem);
+        font-weight: 600;
+        cursor: pointer;
+        box-shadow: 
+          0 4px 12px rgba($cafe-noir, 0.25),
+          0 2px 6px rgba($cafe-noir, 0.15);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+
+        @media (max-width: 768px) {
+          padding: 10px 20px;
+        }
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 0;
+          height: 0;
+          border-radius: 50%;
+          background: rgba(255, 255, 255, 0.2);
+          transform: translate(-50%, -50%);
+          transition: width 0.5s ease, height 0.5s ease;
+        }
+
+        &:hover {
+          transform: translateY(-2px);
+          box-shadow: 
+            0 6px 20px rgba($cafe-noir, 0.35),
+            0 3px 10px rgba($cafe-noir, 0.25);
+
+          &::before {
+            width: 300px;
+            height: 300px;
+          }
+        }
+
+        &:active {
+          transform: translateY(0);
+        }
+      }
+
+      // Mobile menu button
+      .header-menu-button {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        width: 32px;
+        height: 32px;
+        padding: 4px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        position: relative;
+
+        @media (min-width: 900px) {
+          display: none;
+        }
+
+        // Remove any default button styling
+        &:focus {
+          outline: none;
+        }
+
+        span {
+          width: 100%;
+          height: 2px;
+          background: $kombu-green;
+          border-radius: 2px;
+          transition: all 0.3s ease;
+        }
+
+        &:hover {
+          transform: scale(1.1);
+
+          span {
+            background: $cafe-noir;
+          }
+        }
+
+        &:active {
+          transform: scale(1.05);
+        }
+
+        // Open state (X icon)
+        &.open {
+          span:nth-child(1) {
+            transform: rotate(45deg) translateY(10px);
+          }
+
+          span:nth-child(2) {
+            opacity: 0;
+            transform: translateX(20px);
+          }
+
+          span:nth-child(3) {
+            transform: rotate(-45deg) translateY(-10px);
+          }
+        }
+      }
+    }
+  }
+}
+
+// Mobile side menu
+.header-mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%; // Start off-screen
+  width: min(320px, 80vw);
+  height: 100vh;
+  background: rgba($bone, 0.98);
+  backdrop-filter: blur(20px);
+  border-left: 1px solid rgba($cafe-noir, 0.12);
+  padding: 100px 32px 32px; // Top padding accounts for header
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  box-shadow: -4px 0 24px rgba(0, 0, 0, 0.15);
+  transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 999;
+  overflow-y: auto;
+
+  @media (min-width: 900px) {
+    display: none !important;
+  }
+
+  &.open {
+    right: 0; // Slide in from right
+  }
+
+  .header-mobile-link {
+    font-family: "Josefin Sans", sans-serif;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 1rem;
+    color: $kombu-green;
+    text-decoration: none;
+    padding: 16px 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    text-align: left;
+    border: 1px solid transparent;
+    display: block;
+
+    &:hover {
+      color: $cafe-noir;
+      background: rgba($tan, 0.15);
+      border-color: rgba($cafe-noir, 0.2);
+      transform: translateX(-4px);
+    }
+
+    &.active {
+      color: $cafe-noir;
+      background: rgba($tan, 0.2);
+      border-color: rgba($cafe-noir, 0.3);
+    }
+  }
+}
+
+// Overlay when mobile menu is open
+.header-mobile-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba($kombu-green, 0.4);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  z-index: 998;
+
+  &.open {
+    opacity: 1;
+    pointer-events: all;
+  }
 }
