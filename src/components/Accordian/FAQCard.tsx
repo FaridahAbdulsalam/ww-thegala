@@ -1,5 +1,5 @@
 import { Accordion, AccordionSummary, AccordionDetails, Typography } from "@mui/material"
-import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import ArrowDropDown from "@mui/icons-material/ArrowDropDown";
 import "./FAQCard.scss"
 
 type AccordianProps = {
@@ -10,17 +10,31 @@ type AccordianProps = {
 
 const FAQCard = ({question, answer, link}: AccordianProps) => {
   return (
-    <Accordion className="faq-item">
-      <AccordionSummary expandIcon={<ArrowDropDownIcon/>} className="faq-question-summary">
-      <Typography variant="h4" className="faq-question">{question}</Typography>
+    <Accordion className="faq-item" disableGutters elevation={0}>
+      <AccordionSummary 
+        expandIcon={<ArrowDropDown/>} 
+        className="faq-question-summary"
+      >
+        <Typography variant="h4" className="faq-question">
+          {question}
+        </Typography>
       </AccordionSummary>
-      <AccordionDetails className="faq-answer">
+      <AccordionDetails className="faq-answer-details">
         <Typography variant="body1" className="faq-answer-text">
           {answer}
         </Typography>
-        <Typography variant="body1" className="faq-answer-link">
-          {link} 
-        </Typography>
+        {link && (
+          <Typography 
+            variant="body1" 
+            component="a"
+            href={link}
+            target="_blank"
+            rel="noreferrer"
+            className="faq-answer-link"
+          >
+            Learn more →
+          </Typography>
+        )}
       </AccordionDetails>
     </Accordion>
   )

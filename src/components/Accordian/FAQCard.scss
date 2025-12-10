@@ -5,44 +5,127 @@ $moss-green: #889063;
 $tan: #cfbb99;
 $bone: #e5d7c4;
 
-.faq-item{
-    background-color: lighten($bone, 2%);
-    border-radius: 8px;
-    margin-bottom: 16px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    
-    .faq-question-summary {
-        background-color: $tan;
-        border-radius: 8px;
-        padding: 16px;
-        
-        .MuiAccordionSummary-content {
-            margin: 0;
-        }
-        
-        .MuiTypography-root {
-            font-size: clamp(18px, 2.5vw, 22px);
-            font-weight: 500;
-            color: $kombu-green;
-        }
-    }
-    
-    .faq-answer-details {
-        padding: 16px;
-        
-        .faq-answer-text {
-            font-size: clamp(16px, 2.5vw, 20px);
-            color: $moss-green;
-            font-weight: 400;
-        }
+.faq-item {
+  background: linear-gradient(135deg, $bone 0%, darken($bone, 2%) 100%);
+  border-radius: 8px;
+  box-shadow: 
+    0 6px 20px rgba(0, 0, 0, 0.08),
+    0 2px 6px rgba(0, 0, 0, 0.06);
+  border-left: 4px solid $moss-green;
+  transition: all 0.3s ease;
+  overflow: hidden;
 
-        .faq-answer-link {
-            font-size: clamp(16px, 2.5vw, 20px);
-            color: blue;
-            font-weight: 400;
-            text-decoration: underline;
-            cursor: pointer;
-            margin-top: 8px;
-        }
+  // Remove default MUI styles
+  &::before {
+    display: none;
+  }
+
+  &.Mui-expanded {
+    margin: 0 !important;
+    border-left-color: $cafe-noir;
+    box-shadow: 
+      0 12px 32px rgba(0, 0, 0, 0.12),
+      0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+      0 10px 28px rgba(0, 0, 0, 0.1),
+      0 3px 8px rgba(0, 0, 0, 0.07);
+    border-left-color: $cafe-noir;
+  }
+
+  .faq-question-summary {
+    background: transparent;
+    padding: 24px 32px;
+    min-height: unset !important;
+    transition: all 0.3s ease;
+
+    @media (max-width: 768px) {
+      padding: 20px 24px;
     }
+
+    &:hover {
+      background: rgba($tan, 0.15);
+    }
+
+    &.Mui-expanded {
+      background: rgba($tan, 0.2);
+      border-bottom: 1px solid rgba($cafe-noir, 0.15);
+    }
+
+    .MuiAccordionSummary-content {
+      margin: 0 !important;
+    }
+
+    .MuiAccordionSummary-expandIconWrapper {
+      color: $cafe-noir;
+      transition: transform 0.3s ease, color 0.3s ease;
+
+      &.Mui-expanded {
+        transform: rotate(180deg);
+        color: darken($cafe-noir, 10%);
+      }
+    }
+
+    .faq-question {
+      font-size: clamp(17px, 2vw, 20px);
+      font-weight: 500;
+      color: $kombu-green;
+      letter-spacing: 0.03em;
+      line-height: 1.4;
+    }
+  }
+
+  .faq-answer-details {
+    padding: 24px 32px 32px;
+    background: transparent;
+
+    @media (max-width: 768px) {
+      padding: 20px 24px 24px;
+    }
+
+    .faq-answer-text {
+      font-size: clamp(15px, 2vw, 17px);
+      color: $kombu-green;
+      font-weight: 400;
+      line-height: 1.8;
+      letter-spacing: 0.02em;
+      margin-bottom: 12px;
+    }
+
+    .faq-answer-link {
+      font-size: clamp(15px, 2vw, 17px);
+      color: $cafe-noir;
+      font-weight: 500;
+      text-decoration: none;
+      cursor: pointer;
+      display: inline-block;
+      margin-top: 12px;
+      position: relative;
+      transition: all 0.3s ease;
+      letter-spacing: 0.02em;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: $cafe-noir;
+        opacity: 0.5;
+        transition: opacity 0.3s ease;
+      }
+
+      &:hover {
+        color: darken($cafe-noir, 15%);
+
+        &::after {
+          opacity: 1;
+        }
+      }
+    }
+  }
 }
