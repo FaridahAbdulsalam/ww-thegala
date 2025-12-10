@@ -42,7 +42,7 @@ const InformationSection = () => {
               also serve the area.
             </Typography>
             <Typography variant="body1" className="info-parking">
-              There is free street parking is available on-site.
+              Free street parking is available on-site.
             </Typography>
           </Box>
 
