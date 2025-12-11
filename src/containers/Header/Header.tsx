@@ -110,7 +110,7 @@ const Header = () => {
                 className="header-tickets"
                 disableRipple
               >
-                EARLY BIRD TICKETS
+                BUY TICKETS
               </Button>
               {/* Mobile Menu Button */}
               <button
