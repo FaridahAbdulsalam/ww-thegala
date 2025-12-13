@@ -34,7 +34,7 @@ export const faqQuestions: FaqQuestion[] =
     },
     {id: 7,
         question: "Can I know more about the chosen charity for the auction?",
-        answer: "Yes. Please follow this link to find out more about the organization we have chosen to support this year: [link]",
+        answer: "Yes. We will provide more information about the charity closer to the event date.",
     },  
     {id: 8,
         question: "Can I buy tickets on the door?",
