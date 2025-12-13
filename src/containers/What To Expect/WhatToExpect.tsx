@@ -143,7 +143,7 @@ const WhatToExpect = () => {
               youth, whose powerful words, lived personal & profesional
               experience and inspiring life story have made him a popular choice
               among the youth. His captivating lectures are relatable, funny and
-              contain important reminders we need as muslims.
+              contain important reminders we need as muslims. He will delivering his keynote on the topic: The state of our ummah and what we can do to help.
             </Typography>
           </Box>
 
@@ -158,7 +158,7 @@ const WhatToExpect = () => {
               exclusive items and experiences. From unique memorabilia to
               practical services, there will be something for everyone to bid on.
               All proceeds from the auction will go towards this year's chosen
-              charity. Get ready to bid generously and make a difference witin
+              charity. Get ready to bid generously and make a difference within
               the ummah.
             </Typography>
           </Box>
