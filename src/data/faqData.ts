@@ -42,7 +42,8 @@ export const faqQuestions: FaqQuestion[] =
     },
     {id: 9,
         question: "I want to donate to MFAF Youth generlly, how do I do that?",
-        answer: "As we are a charity organisation we appreciate any donations towards our events. You can do so using this link: [link]",
+        answer: "As we are a charity organisation we appreciate any donations towards our events. You can do so here:",
+        link: "https://tr.ee/qtOCtzYIN5"
     },
     {id: 10,
         question: "How do I keep up to date with MFAF Youth?",
