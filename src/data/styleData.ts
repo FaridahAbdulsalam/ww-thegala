@@ -19,42 +19,42 @@ export const styleInpirations: StyleInspo[] =
     {
         id: 1,
         imageUrl: sister1,
-        altText: "Formal Attire 2"
+        altText: "Formal Attire 1"
     },
     {
         id: 2,
         imageUrl: brother1,
-        altText: "Formal Attire 1"
+        altText: "Formal Attire 2"
     },
     {
         id: 3,
         imageUrl: sister2,
-        altText: "Formal Attire 4"
+        altText: "Formal Attire 3"
     },
     {
         id: 4,
         imageUrl: brother2,
-        altText: "Formal Attire 3"
+        altText: "Formal Attire 4"
     },
     {
         id: 5,
         imageUrl: sister3,
-        altText: "Formal Attire 6"
+        altText: "Formal Attire 5"
     },
     {  
         id: 6,
         imageUrl: brother3,
-        altText: "Formal Attire 5"
+        altText: "Formal Attire 6"
     },
     {
         id: 7,
         imageUrl: sister4,
-        altText: "Formal Attire 8"
+        altText: "Formal Attire 7"
     },
     {
         id: 8,
         imageUrl: brother4,
-        altText: "Formal Attire 7"
+        altText: "Formal Attire 8"
     },
     {
         id: 9,

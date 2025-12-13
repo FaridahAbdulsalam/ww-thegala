@@ -50,7 +50,7 @@ const WhatToExpect = () => {
 
           <Box className="wte-style-carousel">
             {styleInpirations.map((item) => (
-              <Carousel imageSrc={item.imageUrl} altText={item.altText} />
+              <Carousel key={item.id} imageSrc={item.imageUrl} altText={item.altText} />
             ))}
           </Box>
         </Box>
