@@ -90,9 +90,9 @@ const WhatToExpect = () => {
             </Typography>
             <Typography variant="body1" className="wte-card-text">
               Enjoy a delicious three-course meal inspired by West-African
-              Cuisine. With an array of dishes to choose from your bound to
+              Cuisine. With an array of dishes to choose from, you're bound to
               leave with a happy heart and full belly!{" "}
-            </Typography>
+            </Typography> 
           </Box>
 
           {/*Awards*/}
@@ -156,7 +156,7 @@ const WhatToExpect = () => {
               As we prepare for an unforgettable evening, we are excited to
               announce that our auction will be back! Featuring an array of
               exclusive items and experiences. From unique memorabilia to
-              pratical services, there will be something for everyone to bid on.
+              practical services, there will be something for everyone to bid on.
               All proceeds from the auction will go towards this year's chosen
               charity. Get ready to bid generously and make a difference witin
               the ummah.
