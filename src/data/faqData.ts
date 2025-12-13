@@ -41,7 +41,7 @@ export const faqQuestions: FaqQuestion[] =
         answer: "Unfortunately not. We encourage you to buy tickets in advance to avoid disappointment as we expect to sell out quickly and cannot accept people on the door due to the venue's capacity limits.",
     },
     {id: 9,
-        question: "I want to donate to MFAF Youth generlly, how do I do that?",
+        question: "I want to donate to MFAF Youth in general, how do I do that?",
         answer: "As we are a charity organisation we appreciate any donations towards our events. You can do so here:",
         link: "https://tr.ee/qtOCtzYIN5"
     },
