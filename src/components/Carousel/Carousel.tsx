@@ -1,10 +1,17 @@
+import { Card } from "@mui/material";
+import "./Carousel.scss";
 
-const Carousel = () => {
+type CarouselProps = {
+  imageSrc: string;
+  altText: string;
+};
+
+const Carousel = ({ imageSrc, altText }: CarouselProps) => {
   return (
-    <div>
-      <h1>Not ready yet</h1>
-    </div>
-  )
-}
+    <Card className="wte-style-card">
+      <img src={imageSrc} alt={altText} className="wte-style-image" />
+    </Card>
+  );
+};
 
-export default Carousel
+export default Carousel;

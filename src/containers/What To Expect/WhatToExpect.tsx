@@ -1,8 +1,8 @@
-import { Box, Container, Typography, Card } from "@mui/material";
-import frame1 from "../../assets/images/background-style.png";
-import frame2 from "../../assets/images/style-inspo/Sister-style-1.png";
+import { Box, Container, Typography } from "@mui/material";
 
 import "./WhatToExpect.scss";
+import { styleInpirations } from "../../data/styleData";
+import Carousel from "../../components/Carousel/Carousel";
 
 const WhatToExpect = () => {
   return (
@@ -47,28 +47,11 @@ const WhatToExpect = () => {
             Not sure what to wear? We've done the hard work for you. Browse our
             style guide for inspiration.
           </Typography>
+
           <Box className="wte-style-carousel">
-            <Card className="wte-style-card">
-              <img
-                src={frame1}
-                alt="Formal Attire 1"
-                className="wte-style-image"
-              />
-            </Card>
-            <Card className="wte-style-card">
-              <img
-                src={frame2}
-                alt="Formal Attire 2"
-                className="wte-style-image"
-              />
-            </Card>
-            <Card className="wte-style-card">
-              <img
-                src={frame1}
-                alt="Formal Attire 3"
-                className="wte-style-image"
-              />
-            </Card>
+            {styleInpirations.map((item) => (
+              <Carousel imageSrc={item.imageUrl} altText={item.altText} />
+            ))}
           </Box>
         </Box>
 
@@ -92,7 +75,7 @@ const WhatToExpect = () => {
               Enjoy a delicious three-course meal inspired by West-African
               Cuisine. With an array of dishes to choose from, you're bound to
               leave with a happy heart and full belly!{" "}
-            </Typography> 
+            </Typography>
           </Box>
 
           {/*Awards*/}
@@ -143,7 +126,9 @@ const WhatToExpect = () => {
               youth, whose powerful words, lived personal & profesional
               experience and inspiring life story have made him a popular choice
               among the youth. His captivating lectures are relatable, funny and
-              contain important reminders we need as muslims. He will delivering his keynote on the topic: The state of our ummah and what we can do to help.
+              contain important reminders we need as muslims. He will be
+              delivering his keynote on the topic: The state of our ummah and
+              what we can do to help.
             </Typography>
           </Box>
 
@@ -156,10 +141,10 @@ const WhatToExpect = () => {
               As we prepare for an unforgettable evening, we are excited to
               announce that our auction will be back! Featuring an array of
               exclusive items and experiences. From unique memorabilia to
-              practical services, there will be something for everyone to bid on.
-              All proceeds from the auction will go towards this year's chosen
-              charity. Get ready to bid generously and make a difference within
-              the ummah.
+              practical services, there will be something for everyone to bid
+              on. All proceeds from the auction will go towards this year's
+              chosen charity. Get ready to bid generously and make a difference
+              within the ummah.
             </Typography>
           </Box>
         </Box>

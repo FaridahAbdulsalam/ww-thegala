@@ -12,7 +12,7 @@ $bone: #e5d7c4;
 
   // Optional: Add subtle texture overlay
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -79,14 +79,16 @@ $bone: #e5d7c4;
     }
 
     .wte-style-block {
-      background: linear-gradient(135deg, lighten($tan, 12%) 0%, lighten($tan, 8%) 100%);
+      background: linear-gradient(
+        135deg,
+        lighten($tan, 12%) 0%,
+        lighten($tan, 8%) 100%
+      );
       padding: 64px 40px;
       text-align: center;
       max-width: 1100px;
       margin: 0 auto 80px;
-      box-shadow: 
-        0 10px 40px rgba(0, 0, 0, 0.12),
-        0 2px 8px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.08);
       border-radius: 2px;
       border-top: 3px solid $cafe-noir;
 
@@ -143,37 +145,6 @@ $bone: #e5d7c4;
             background: darken($cafe-noir, 10%);
           }
         }
-
-        .wte-style-card {
-          min-width: 180px;
-          max-width: 240px;
-          overflow: hidden;
-          box-shadow: 
-            0 8px 24px rgba(0, 0, 0, 0.18),
-            0 2px 6px rgba(0, 0, 0, 0.12);
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
-          scroll-snap-align: center;
-          border-radius: 1px;
-
-          @media (max-width: 768px) {
-            min-width: 160px;
-            max-width: 200px;
-          }
-
-          &:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 
-              0 16px 40px rgba(0, 0, 0, 0.24),
-              0 4px 12px rgba(0, 0, 0, 0.16);
-          }
-
-          img {
-            width: 100%;
-            height: auto;
-            display: block;
-            object-fit: cover;
-          }
-        }
       }
     }
 
@@ -198,7 +169,7 @@ $bone: #e5d7c4;
         display: inline-block;
 
         &::after {
-          content: '';
+          content: "";
           position: absolute;
           bottom: -12px;
           left: 50%;
@@ -237,8 +208,7 @@ $bone: #e5d7c4;
       .wte-card {
         background: linear-gradient(135deg, $bone 0%, darken($bone, 2%) 100%);
         padding: 40px 32px;
-        box-shadow: 
-          0 6px 20px rgba(0, 0, 0, 0.08),
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08),
           0 2px 6px rgba(0, 0, 0, 0.06);
         display: flex;
         flex-direction: column;
@@ -246,7 +216,8 @@ $bone: #e5d7c4;
         height: 100%;
         border-radius: 2px;
         border-left: 4px solid $moss-green;
-        transition: transform 0.3s ease, box-shadow 0.3s ease, border-left-color 0.3s ease;
+        transition: transform 0.3s ease, box-shadow 0.3s ease,
+          border-left-color 0.3s ease;
 
         @media (max-width: 768px) {
           padding: 32px 24px;
@@ -254,8 +225,7 @@ $bone: #e5d7c4;
 
         &:hover {
           transform: translateY(-4px);
-          box-shadow: 
-            0 12px 32px rgba(0, 0, 0, 0.12),
+          box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12),
             0 4px 12px rgba(0, 0, 0, 0.08);
           border-left-color: $cafe-noir;
         }
@@ -290,7 +260,7 @@ $bone: #e5d7c4;
           transition: gap 0.3s ease, color 0.3s ease;
 
           &::after {
-            content: '→';
+            content: "→";
             font-size: 18px;
           }
 
