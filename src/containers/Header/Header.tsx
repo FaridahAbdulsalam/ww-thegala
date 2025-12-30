@@ -104,13 +104,13 @@ const Header = () => {
               <Button
                 variant="contained"
                 color="primary"
-                href="https://www.eventbrite.com/e/winter-walimah-the-gala-tickets-1976923644839?aff=oddtdtcreator"
+                href="https://docs.google.com/forms/d/e/1FAIpQLSdaQlC77oETfhyAOd6afaFoktPqlJAP9hHhLpbGv4U3Gitk6g/viewform"
                 target="_blank"
                 rel="noreferrer"
                 className="header-tickets"
                 disableRipple
               >
-                BUY TICKETS
+                Join Waiting List
               </Button>
               {/* Mobile Menu Button */}
               <button

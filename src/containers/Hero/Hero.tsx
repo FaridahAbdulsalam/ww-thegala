@@ -42,6 +42,10 @@ const Hero = () => {
             The annual Winter Walimah. A spectacular evening dedicated to you.
             It's time to celebrate your community!
           </Typography>
+          <Typography variant="h3" className="hero-description">
+             This event is currently SOLD OUT
+          </Typography>
+
           <Box className="hero-actions">
             <Button
               variant="contained"
@@ -49,9 +53,9 @@ const Hero = () => {
               size="large"
               className="hero-primary-button"
               target="_blank"
-              href="https://www.eventbrite.com/e/winter-walimah-the-gala-tickets-1976923644839?aff=oddtdtcreator"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSdaQlC77oETfhyAOd6afaFoktPqlJAP9hHhLpbGv4U3Gitk6g/viewform"
             >
-              Get Tickets
+              Join our waiting list
             </Button>
             <Button
               variant="text"

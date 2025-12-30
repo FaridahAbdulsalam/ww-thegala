@@ -94,12 +94,12 @@ const WhatToExpect = () => {
             <Typography
               variant="body1"
               component="a"
-              href="https://www.instagram.com/stories/highlights/18111097441721134/"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSdIADyraxgahgcWAIaW1eSjZUSON88ScrFpvNGyq0DEPZoiZw/viewform"
               target="_blank"
               rel="noreferrer"
               className="faq-answer-link"
             >
-              Send in your nominees →
+              Vote for your finalists →
             </Typography>
 
             {/* <Button
